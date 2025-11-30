@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Offside', sans-serif;
+  background-color: #c3c3c3;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.exit-button {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.exit-button img {
+  width: 60px;
+  height: 60px;
+}
+
+.exit-button:hover img{
+  filter: brightness(1.1);
+}
+
+
+.profile-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.profile-card {
+  background: rgba(217, 217, 217, 1);
+  border-radius: 63px;
+  padding: 40px;
+  display: flex;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-image {
+  width: 226px;
+  height: 151px;
+  margin-right: 50px;
+  overflow: hidden;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.profile-details {
+  flex: 1;
+  font-size: 24px;
+  color: rgba(0, 105, 59, 1);
+}
+
+.detail-row {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.label {
+  min-width: 150px;
+  font-weight: bold;
+}
+
+.separator {
+  margin: 0 10px;
+  width: 10px;
+}
+
+.value {
+  flex: 1;
+}
+
+.edit-button {
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-button img {
+  width: 59px;
+  height: 59px;
+  transition: transform 0.3s;
+}
+
+.edit-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Settings Button */
+.settings-button {
+  position: absolute;
+  bottom: 40px;
+  right: 120px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.settings-button img {
+  width: 59px;
+  height: 59px;
+  transition: transform 0.3s;
+}
+
+.settings-button:hover img {
+  transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Modal tersembunyi secara default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  /* Hapus baris 'display: flex;' dari sini */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.modal-content h2 {
+  color: rgba(0, 105, 59, 1);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.close-button {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+.form-group input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.btn-save {
+  background-color: rgba(0, 105, 59, 1);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-family: 'Offside', sans-serif;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.btn-save:hover {
+  background-color: rgba(0, 80, 45, 1);
+}
+
+.message {
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    padding: 30px;
+  }
+  
+  .profile-image {
+    margin-right: 0;
+    margin-bottom: 30px;
+    width: 180px;
+    height: 120px;
+    align-self: center;
+  }
+  
+  .profile-details {
+    font-size: 18px;
+  }
+  
+  .label {
+    min-width: 120px;
+  }
+  
+  /* Adjust button positions for smaller screens */
+  .edit-button, .settings-button {
+    position: static;
+    margin-top: 20px;
+    align-self: flex-end;
+  }
+  .settings-button {
+    margin-right: 10px; /* Add some space between buttons */
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    border-radius: 40px;
+    padding: 20px;
+  }
+  
+  .profile-details {
+    font-size: 16px;
+  }
+  
+  .label {
+    min-width: 100px;
+  }
+  
+  .detail-row {
+    margin-bottom: 10px;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+}
